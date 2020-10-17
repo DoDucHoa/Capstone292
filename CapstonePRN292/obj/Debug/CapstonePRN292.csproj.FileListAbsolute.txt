@@ -1,0 +1,11 @@
+C:\Users\HoaDD\Desktop\FPT\PRN292\source\CapstonePRN292\CapstonePRN292\bin\Debug\CapstonePRN292.exe.config
+C:\Users\HoaDD\Desktop\FPT\PRN292\source\CapstonePRN292\CapstonePRN292\bin\Debug\CapstonePRN292.exe
+C:\Users\HoaDD\Desktop\FPT\PRN292\source\CapstonePRN292\CapstonePRN292\bin\Debug\CapstonePRN292.pdb
+C:\Users\HoaDD\Desktop\FPT\PRN292\source\CapstonePRN292\CapstonePRN292\obj\Debug\CapstonePRN292.csprojAssemblyReference.cache
+C:\Users\HoaDD\Desktop\FPT\PRN292\source\CapstonePRN292\CapstonePRN292\obj\Debug\CapstonePRN292.Properties.Resources.resources
+C:\Users\HoaDD\Desktop\FPT\PRN292\source\CapstonePRN292\CapstonePRN292\obj\Debug\CapstonePRN292.csproj.GenerateResource.cache
+C:\Users\HoaDD\Desktop\FPT\PRN292\source\CapstonePRN292\CapstonePRN292\obj\Debug\CapstonePRN292.csproj.CoreCompileInputs.cache
+C:\Users\HoaDD\Desktop\FPT\PRN292\source\CapstonePRN292\CapstonePRN292\obj\Debug\CapstonePRN292.exe
+C:\Users\HoaDD\Desktop\FPT\PRN292\source\CapstonePRN292\CapstonePRN292\obj\Debug\CapstonePRN292.pdb
+C:\Users\HoaDD\Desktop\FPT\PRN292\source\CapstonePRN292\CapstonePRN292\obj\Debug\CapstonePRN292.DepotManager.resources
+C:\Users\HoaDD\Desktop\FPT\PRN292\source\CapstonePRN292\CapstonePRN292\obj\Debug\CapstonePRN292.Login.resources
