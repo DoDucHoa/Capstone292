@@ -59,11 +59,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DBHelper\DBConnection.cs" />
-    <Compile Include="Form\AdminX.cs">
+    <Compile Include="3. Data Layer\DBConnection.cs" />
+    <Compile Include="1. Form Layer\AdminX.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\AdminX.Designer.cs">
+    <Compile Include="1. Form Layer\AdminX.Designer.cs">
       <DependentUpon>AdminX.cs</DependentUpon>
     </Compile>
     <Compile Include="AccountProfile.cs">
@@ -72,16 +72,16 @@
     <Compile Include="AccountProfile.Designer.cs">
       <DependentUpon>AccountProfile.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\DepotX.cs">
+    <Compile Include="1. Form Layer\DepotX.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\DepotX.Designer.cs">
+    <Compile Include="1. Form Layer\DepotX.Designer.cs">
       <DependentUpon>DepotX.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\LoginX.cs">
+    <Compile Include="1. Form Layer\LoginX.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\LoginX.Designer.cs">
+    <Compile Include="1. Form Layer\LoginX.Designer.cs">
       <DependentUpon>LoginX.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -89,13 +89,13 @@
     <EmbeddedResource Include="AccountProfile.resx">
       <DependentUpon>AccountProfile.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\AdminX.resx">
+    <EmbeddedResource Include="1. Form Layer\AdminX.resx">
       <DependentUpon>AdminX.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\DepotX.resx">
+    <EmbeddedResource Include="1. Form Layer\DepotX.resx">
       <DependentUpon>DepotX.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\LoginX.resx">
+    <EmbeddedResource Include="1. Form Layer\LoginX.resx">
       <DependentUpon>LoginX.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
@@ -124,6 +124,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\man-on-motorbike_icon-icons.com_68531.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="2. Business Layer\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

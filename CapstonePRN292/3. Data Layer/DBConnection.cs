@@ -50,7 +50,7 @@ namespace CapstonePRN292.DBHelper
             }
         }
 
-        public void 
+        
 
         //string connectionString = @"Data Source=.\SQLEXPRESS;Initial Catalog=BikeSaleSystemDB;User ID=sa;password=sa123456";
         //public DataTable ExecuteQuery(string query, object[] parameter = null)

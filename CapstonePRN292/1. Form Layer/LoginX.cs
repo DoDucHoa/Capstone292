@@ -74,5 +74,10 @@ namespace CapstonePRN292
                 e.Cancel = true;
             }
         }
+
+        private void LoginX_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
