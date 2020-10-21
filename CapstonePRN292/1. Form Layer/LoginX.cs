@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using CapstonePRN292.DBHelper;
+using CapstonePRN292._1._Form_Layer;
 
 namespace CapstonePRN292
 {
@@ -64,7 +65,13 @@ namespace CapstonePRN292
 
         private void btnSignUp_Click(object sender, EventArgs e)
         {
-
+            RegisterX fr = new RegisterX();
+            this.Hide();
+            fr.ShowDialog();
+            this.Show();
+            txtUsername.Clear();
+            txtPassword.Clear();
+            txtUsername.Focus();
         }
 
         private void LoginX_FormClosing(object sender, FormClosingEventArgs e)

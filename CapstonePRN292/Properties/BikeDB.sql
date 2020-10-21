@@ -17,6 +17,7 @@ CREATE TABLE Account
 	username NVARCHAR(50) PRIMARY KEY,
 	password NVARCHAR(50) NOT NULL,
 	fullname NVARCHAR(50) NOT NULL,
+	email NCHAR(50) NOT NULL,
 	isAdmin BIT NOT NULL DEFAULT 0 --false
 )
 GO	
@@ -69,39 +70,16 @@ INSERT INTO dbo.Account
         ( username ,
           password ,
           fullname ,
+          email ,
           isAdmin
         )
 VALUES  ( N'sa' , -- username - nvarchar(50)
           N'123' , -- password - nvarchar(50)
           N'Hoa Do' , -- fullname - nvarchar(50)
-          0  -- isAdmin - bit
-        )
-
-INSERT INTO dbo.Account
-        ( username ,
-          password ,
-          fullname ,
-          isAdmin
-        )
-VALUES  ( N'sb' , -- username - nvarchar(50)
-          N'123' , -- password - nvarchar(50)
-          N'Thanh tri' , -- fullname - nvarchar(50)
+          N'hhoa0978@gmail.com' , -- email - nchar(50)
           1  -- isAdmin - bit
         )
-
-INSERT INTO dbo.Account
-        ( username ,
-          password ,
-          fullname ,
-          isAdmin
-        )
-VALUES  ( N'sc' , -- username - nvarchar(50)
-          N'123' , -- password - nvarchar(50)
-          N'Minh Duc' , -- fullname - nvarchar(50)
-          0  -- isAdmin - bit
-        )
 GO
-
 
 
 

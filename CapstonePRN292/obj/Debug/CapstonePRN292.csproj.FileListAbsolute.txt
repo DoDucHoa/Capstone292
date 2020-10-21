@@ -154,3 +154,4 @@ C:\Users\HoaDD\Desktop\FPT\PRN292\source\CapstonePRN292\CapstonePRN292\bin\Debug
 C:\Users\HoaDD\Desktop\FPT\PRN292\source\CapstonePRN292\CapstonePRN292\bin\Debug\es\DevExpress.XtraGauges.v19.2.Core.resources.dll
 C:\Users\HoaDD\Desktop\FPT\PRN292\source\CapstonePRN292\CapstonePRN292\bin\Debug\ja\DevExpress.XtraGauges.v19.2.Core.resources.dll
 C:\Users\HoaDD\Desktop\FPT\PRN292\source\CapstonePRN292\CapstonePRN292\bin\Debug\ru\DevExpress.XtraGauges.v19.2.Core.resources.dll
+C:\Users\HoaDD\Desktop\FPT\PRN292\source\CapstonePRN292\CapstonePRN292\obj\Debug\CapstonePRN292._1._Form_Layer.RegisterX.resources
