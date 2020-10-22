@@ -1,5 +1,4 @@
-﻿using CapstonePRN292._2._Business_Layer;
-using CapstonePRN292.DBHelper;
+﻿using CapstonePRN292.DBHelper;
 using System;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
@@ -29,11 +28,9 @@ namespace CapstonePRN292._1._Form_Layer
             
             if (checkValid(username, password, reEnter, fullName, email, isCheck))
             {
-                RegisterDAO registerDAO = new RegisterDAO();
-                registerDAO.loadToDatabase(username, reEnter, fullName, email);
-
-                MessageBox.Show("Create success.", "Notify", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.Close();
+                Confirm fr = new Confirm(username, reEnter, fullName, email);
+                this.Hide();
+                fr.ShowDialog();
             }
         }
 

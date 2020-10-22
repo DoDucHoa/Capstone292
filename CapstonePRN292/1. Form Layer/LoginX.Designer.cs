@@ -53,6 +53,7 @@
             // 
             // btnExit
             // 
+            this.btnExit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnExit.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.ImageOptions.Image")));
             this.btnExit.Location = new System.Drawing.Point(470, 186);
             this.btnExit.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -128,8 +129,10 @@
             // 
             // LoginX
             // 
+            this.AcceptButton = this.btnLogin;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnExit;
             this.ClientSize = new System.Drawing.Size(715, 309);
             this.Controls.Add(this.labelControl4);
             this.Controls.Add(this.btnSignUp);

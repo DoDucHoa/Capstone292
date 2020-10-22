@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.txtReEnter = new System.Windows.Forms.TextBox();
@@ -41,7 +42,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -66,6 +66,17 @@
             this.panel1.Size = new System.Drawing.Size(382, 319);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.LightSeaGreen;
+            this.label6.Location = new System.Drawing.Point(88, 9);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(216, 32);
+            this.label6.TabIndex = 12;
+            this.label6.Text = "Account Profile";
             // 
             // btnExit
             // 
@@ -171,17 +182,6 @@
             this.label1.Size = new System.Drawing.Size(96, 18);
             this.label1.TabIndex = 0;
             this.label1.Text = "User Name";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.label6.Location = new System.Drawing.Point(88, 9);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(216, 32);
-            this.label6.TabIndex = 12;
-            this.label6.Text = "Account Profile";
             // 
             // AccountProfile
             // 
