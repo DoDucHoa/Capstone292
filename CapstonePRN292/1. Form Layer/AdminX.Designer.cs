@@ -79,7 +79,7 @@
             this.btnUpdateC = new DevExpress.XtraEditors.SimpleButton();
             this.btnDeleteC = new DevExpress.XtraEditors.SimpleButton();
             this.btnAddC = new DevExpress.XtraEditors.SimpleButton();
-            this.tabDepot = new DevExpress.XtraBars.Navigation.TabNavigationPage();
+            this.tabCompany = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.panel11 = new System.Windows.Forms.Panel();
             this.chkAvailable = new System.Windows.Forms.CheckBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -139,7 +139,7 @@
             this.panel9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategory)).BeginInit();
             this.panel10.SuspendLayout();
-            this.tabDepot.SuspendLayout();
+            this.tabCompany.SuspendLayout();
             this.panel11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtIDD.Properties)).BeginInit();
             this.panel12.SuspendLayout();
@@ -162,7 +162,7 @@
             this.tabPane1.Controls.Add(this.tabProfit);
             this.tabPane1.Controls.Add(this.tabBike);
             this.tabPane1.Controls.Add(this.tabCategory);
-            this.tabPane1.Controls.Add(this.tabDepot);
+            this.tabPane1.Controls.Add(this.tabCompany);
             this.tabPane1.Controls.Add(this.tabAccount);
             this.tabPane1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabPane1.Location = new System.Drawing.Point(0, 0);
@@ -172,7 +172,7 @@
             this.tabProfit,
             this.tabBike,
             this.tabCategory,
-            this.tabDepot,
+            this.tabCompany,
             this.tabAccount});
             this.tabPane1.RegularSize = new System.Drawing.Size(814, 468);
             this.tabPane1.SelectedPage = this.tabProfit;
@@ -248,7 +248,7 @@
             this.tabBike.Controls.Add(this.panel3);
             this.tabBike.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("tabBike.ImageOptions.Image")));
             this.tabBike.Name = "tabBike";
-            this.tabBike.Size = new System.Drawing.Size(814, 412);
+            this.tabBike.Size = new System.Drawing.Size(814, 468);
             // 
             // panel6
             // 
@@ -478,7 +478,7 @@
             this.tabCategory.Controls.Add(this.panel10);
             this.tabCategory.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("tabCategory.ImageOptions.Image")));
             this.tabCategory.Name = "tabCategory";
-            this.tabCategory.Size = new System.Drawing.Size(814, 412);
+            this.tabCategory.Size = new System.Drawing.Size(814, 468);
             // 
             // panel7
             // 
@@ -609,16 +609,16 @@
             this.btnAddC.TabIndex = 0;
             this.btnAddC.Text = "Add";
             // 
-            // tabDepot
+            // tabCompany
             // 
-            this.tabDepot.Caption = "Depot";
-            this.tabDepot.Controls.Add(this.panel11);
-            this.tabDepot.Controls.Add(this.panel12);
-            this.tabDepot.Controls.Add(this.panel13);
-            this.tabDepot.Controls.Add(this.panel14);
-            this.tabDepot.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("tabDepot.ImageOptions.Image")));
-            this.tabDepot.Name = "tabDepot";
-            this.tabDepot.Size = new System.Drawing.Size(814, 412);
+            this.tabCompany.Caption = "Company";
+            this.tabCompany.Controls.Add(this.panel11);
+            this.tabCompany.Controls.Add(this.panel12);
+            this.tabCompany.Controls.Add(this.panel13);
+            this.tabCompany.Controls.Add(this.panel14);
+            this.tabCompany.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("tabDepot.ImageOptions.Image")));
+            this.tabCompany.Name = "tabCompany";
+            this.tabCompany.Size = new System.Drawing.Size(814, 468);
             // 
             // panel11
             // 
@@ -778,7 +778,7 @@
             this.tabAccount.Controls.Add(this.panel18);
             this.tabAccount.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("tabAccount.ImageOptions.Image")));
             this.tabAccount.Name = "tabAccount";
-            this.tabAccount.Size = new System.Drawing.Size(814, 412);
+            this.tabAccount.Size = new System.Drawing.Size(814, 468);
             // 
             // panel15
             // 
@@ -879,6 +879,7 @@
             // 
             // dgvAccount
             // 
+            this.dgvAccount.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvAccount.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAccount.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvAccount.Location = new System.Drawing.Point(0, 0);
@@ -966,7 +967,7 @@
             this.panel9.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategory)).EndInit();
             this.panel10.ResumeLayout(false);
-            this.tabDepot.ResumeLayout(false);
+            this.tabCompany.ResumeLayout(false);
             this.panel11.ResumeLayout(false);
             this.panel11.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtIDD.Properties)).EndInit();
@@ -994,7 +995,7 @@
         private DevExpress.XtraBars.Navigation.TabNavigationPage tabProfit;
         private DevExpress.XtraBars.Navigation.TabNavigationPage tabBike;
         private DevExpress.XtraBars.Navigation.TabNavigationPage tabCategory;
-        private DevExpress.XtraBars.Navigation.TabNavigationPage tabDepot;
+        private DevExpress.XtraBars.Navigation.TabNavigationPage tabCompany;
         private DevExpress.XtraBars.Navigation.TabNavigationPage tabAccount;
         private System.Windows.Forms.Panel panel1;
         private DevExpress.XtraEditors.SimpleButton btnViewBill;

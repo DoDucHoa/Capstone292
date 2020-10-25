@@ -71,6 +71,7 @@
     <Compile Include="1. Form Layer\RegisterX.Designer.cs">
       <DependentUpon>RegisterX.cs</DependentUpon>
     </Compile>
+    <Compile Include="2. Business Layer\DepotDAO.cs" />
     <Compile Include="2. Business Layer\RegisterDAO.cs" />
     <Compile Include="3. Data Layer\DBConnection.cs" />
     <Compile Include="1. Form Layer\AdminX.cs">
@@ -97,6 +98,7 @@
     <Compile Include="1. Form Layer\LoginX.Designer.cs">
       <DependentUpon>LoginX.cs</DependentUpon>
     </Compile>
+    <Compile Include="3. Data Layer\Depot.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="1. Form Layer\Confirm.resx">

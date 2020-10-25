@@ -43,7 +43,7 @@
             // btnLogin
             // 
             this.btnLogin.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnLogin.ImageOptions.Image")));
-            this.btnLogin.Location = new System.Drawing.Point(350, 186);
+            this.btnLogin.Location = new System.Drawing.Point(307, 186);
             this.btnLogin.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(112, 39);
@@ -55,7 +55,7 @@
             // 
             this.btnExit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnExit.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.ImageOptions.Image")));
-            this.btnExit.Location = new System.Drawing.Point(470, 186);
+            this.btnExit.Location = new System.Drawing.Point(436, 186);
             this.btnExit.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(112, 39);
@@ -65,7 +65,7 @@
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(148, 90);
+            this.labelControl1.Location = new System.Drawing.Point(117, 90);
             this.labelControl1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(75, 17);
@@ -74,7 +74,7 @@
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(151, 130);
+            this.labelControl2.Location = new System.Drawing.Point(120, 133);
             this.labelControl2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(72, 17);
@@ -83,14 +83,14 @@
             // 
             // txtUsername
             // 
-            this.txtUsername.Location = new System.Drawing.Point(233, 87);
+            this.txtUsername.Location = new System.Drawing.Point(199, 87);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(349, 25);
             this.txtUsername.TabIndex = 1;
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(233, 130);
+            this.txtPassword.Location = new System.Drawing.Point(199, 130);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(349, 25);
             this.txtPassword.TabIndex = 2;
@@ -100,7 +100,7 @@
             // 
             this.labelControl3.Appearance.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl3.Appearance.Options.UseFont = true;
-            this.labelControl3.Location = new System.Drawing.Point(307, 233);
+            this.labelControl3.Location = new System.Drawing.Point(282, 233);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(137, 14);
             this.labelControl3.TabIndex = 6;
@@ -109,7 +109,7 @@
             // btnSignUp
             // 
             this.btnSignUp.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSignUp.ImageOptions.Image")));
-            this.btnSignUp.Location = new System.Drawing.Point(323, 255);
+            this.btnSignUp.Location = new System.Drawing.Point(295, 255);
             this.btnSignUp.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnSignUp.Name = "btnSignUp";
             this.btnSignUp.Size = new System.Drawing.Size(112, 39);
@@ -121,7 +121,7 @@
             // 
             this.labelControl4.Appearance.Font = new System.Drawing.Font("Arial Rounded MT Bold", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl4.Appearance.Options.UseFont = true;
-            this.labelControl4.Location = new System.Drawing.Point(233, 26);
+            this.labelControl4.Location = new System.Drawing.Point(187, 27);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(305, 33);
             this.labelControl4.TabIndex = 7;
@@ -133,7 +133,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnExit;
-            this.ClientSize = new System.Drawing.Size(715, 309);
+            this.ClientSize = new System.Drawing.Size(679, 309);
             this.Controls.Add(this.labelControl4);
             this.Controls.Add(this.btnSignUp);
             this.Controls.Add(this.labelControl3);

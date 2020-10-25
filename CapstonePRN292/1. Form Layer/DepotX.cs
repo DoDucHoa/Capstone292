@@ -8,6 +8,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using CapstonePRN292.DBHelper;
 
 namespace CapstonePRN292
 {
@@ -16,6 +17,13 @@ namespace CapstonePRN292
         public DepotX()
         {
             InitializeComponent();
+            loadCustomerTable();
+            loadBikeTable();
+        }
+
+        void loadDepot()
+        {
+
         }
 
         private void DepotX_Load(object sender, EventArgs e)
@@ -40,6 +48,34 @@ namespace CapstonePRN292
             {
                 e.Cancel = true;
             }
+        }
+    
+        private void loadCustomerTable()
+        {
+            string sql = "SELECT dbo.Account.fullname AS [Full Name], " +
+                "dbo.AccountInfo.age AS [Age], " +
+                "dbo.AccountInfo.address AS [Address], " +
+                "dbo.AccountInfo.birth AS [Birth] " +
+                "FROM dbo.Account, dbo.AccountInfo " +
+                "WHERE dbo.Account.username = dbo.AccountInfo.username " +
+                "ORDER BY fullname";
+            DBConnection connection = new DBConnection();
+            dgvCustomer.DataSource = connection.dataTable(sql);
+        }
+
+        private void loadBikeTable()
+        {
+            string sql = "SELECT dbo.Bike.name AS [Name], " +
+                "dbo.BikeCategory.name AS [Category], " +
+                "price AS [Price], " +
+                "dbo.Company.name AS [Company], " +
+                "version AS [Version], " +
+                "cc AS [CC] " +
+                "FROM dbo.Bike, dbo.BikeCategory, dbo.Company " +
+                "WHERE dbo.Bike.idCategory = dbo.BikeCategory.id " +
+                "AND dbo.Bike.idCompany = dbo.Company.id";
+            DBConnection connection = new DBConnection();
+            dgvBike.DataSource = connection.dataTable(sql);
         }
     }
 }

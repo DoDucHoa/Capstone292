@@ -154,7 +154,7 @@
             // 
             // btnSignUp
             // 
-            this.btnSignUp.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.btnSignUp.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSignUp.ImageOptions.Image")));
             this.btnSignUp.Location = new System.Drawing.Point(86, 388);
             this.btnSignUp.Name = "btnSignUp";
             this.btnSignUp.Size = new System.Drawing.Size(115, 34);
@@ -164,7 +164,8 @@
             // 
             // btnExit
             // 
-            this.btnExit.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
+            this.btnExit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnExit.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.ImageOptions.Image")));
             this.btnExit.Location = new System.Drawing.Point(267, 388);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(115, 34);
@@ -185,8 +186,10 @@
             // 
             // RegisterX
             // 
+            this.AcceptButton = this.btnSignUp;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnExit;
             this.ClientSize = new System.Drawing.Size(460, 455);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.btnExit);
