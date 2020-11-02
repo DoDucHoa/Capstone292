@@ -57,7 +57,6 @@
             this.btnSearchB = new DevExpress.XtraEditors.SimpleButton();
             this.txtSearchB = new DevExpress.XtraEditors.TextEdit();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.dgvBike = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnView = new DevExpress.XtraEditors.SimpleButton();
             this.btnUpdateB = new DevExpress.XtraEditors.SimpleButton();
@@ -81,9 +80,7 @@
             this.btnAddC = new DevExpress.XtraEditors.SimpleButton();
             this.tabCompany = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.panel11 = new System.Windows.Forms.Panel();
-            this.chkAvailable = new System.Windows.Forms.CheckBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.txtDepotD = new System.Windows.Forms.TextBox();
+            this.txtNameD = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.txtIDD = new DevExpress.XtraEditors.TextEdit();
             this.label16 = new System.Windows.Forms.Label();
@@ -91,7 +88,7 @@
             this.btnSearchD = new DevExpress.XtraEditors.SimpleButton();
             this.txtSearchD = new DevExpress.XtraEditors.TextEdit();
             this.panel13 = new System.Windows.Forms.Panel();
-            this.dgvDepot = new System.Windows.Forms.DataGridView();
+            this.dgvCompany = new System.Windows.Forms.DataGridView();
             this.panel14 = new System.Windows.Forms.Panel();
             this.btnViewD = new DevExpress.XtraEditors.SimpleButton();
             this.btnUpdateD = new DevExpress.XtraEditors.SimpleButton();
@@ -115,6 +112,7 @@
             this.btnUpdateA = new DevExpress.XtraEditors.SimpleButton();
             this.btnDeleteA = new DevExpress.XtraEditors.SimpleButton();
             this.btnAddA = new DevExpress.XtraEditors.SimpleButton();
+            this.dgvBike = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.tabPane1)).BeginInit();
             this.tabPane1.SuspendLayout();
             this.tabProfit.SuspendLayout();
@@ -129,7 +127,6 @@
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtSearchB.Properties)).BeginInit();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvBike)).BeginInit();
             this.panel3.SuspendLayout();
             this.tabCategory.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -145,7 +142,7 @@
             this.panel12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtSearchD.Properties)).BeginInit();
             this.panel13.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDepot)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCompany)).BeginInit();
             this.panel14.SuspendLayout();
             this.tabAccount.SuspendLayout();
             this.panel15.SuspendLayout();
@@ -155,6 +152,7 @@
             this.panel17.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAccount)).BeginInit();
             this.panel18.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBike)).BeginInit();
             this.SuspendLayout();
             // 
             // tabPane1
@@ -174,9 +172,9 @@
             this.tabCategory,
             this.tabCompany,
             this.tabAccount});
-            this.tabPane1.RegularSize = new System.Drawing.Size(814, 468);
+            this.tabPane1.RegularSize = new System.Drawing.Size(1054, 468);
             this.tabPane1.SelectedPage = this.tabProfit;
-            this.tabPane1.Size = new System.Drawing.Size(814, 468);
+            this.tabPane1.Size = new System.Drawing.Size(1054, 468);
             this.tabPane1.TabIndex = 0;
             this.tabPane1.Text = "Profit";
             // 
@@ -187,7 +185,7 @@
             this.tabProfit.Controls.Add(this.panel1);
             this.tabProfit.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("tabProfit.ImageOptions.Image")));
             this.tabProfit.Name = "tabProfit";
-            this.tabProfit.Size = new System.Drawing.Size(814, 412);
+            this.tabProfit.Size = new System.Drawing.Size(1054, 412);
             // 
             // panel2
             // 
@@ -248,7 +246,7 @@
             this.tabBike.Controls.Add(this.panel3);
             this.tabBike.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("tabBike.ImageOptions.Image")));
             this.tabBike.Name = "tabBike";
-            this.tabBike.Size = new System.Drawing.Size(814, 468);
+            this.tabBike.Size = new System.Drawing.Size(1054, 412);
             // 
             // panel6
             // 
@@ -266,7 +264,7 @@
             this.panel6.Controls.Add(this.label2);
             this.panel6.Controls.Add(this.txtIDB);
             this.panel6.Controls.Add(this.label1);
-            this.panel6.Location = new System.Drawing.Point(431, 60);
+            this.panel6.Location = new System.Drawing.Point(662, 60);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(380, 349);
             this.panel6.TabIndex = 5;
@@ -414,17 +412,8 @@
             this.panel4.Controls.Add(this.dgvBike);
             this.panel4.Location = new System.Drawing.Point(3, 60);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(422, 349);
+            this.panel4.Size = new System.Drawing.Size(653, 349);
             this.panel4.TabIndex = 0;
-            // 
-            // dgvBike
-            // 
-            this.dgvBike.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvBike.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvBike.Location = new System.Drawing.Point(0, 0);
-            this.dgvBike.Name = "dgvBike";
-            this.dgvBike.Size = new System.Drawing.Size(422, 349);
-            this.dgvBike.TabIndex = 0;
             // 
             // panel3
             // 
@@ -478,7 +467,7 @@
             this.tabCategory.Controls.Add(this.panel10);
             this.tabCategory.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("tabCategory.ImageOptions.Image")));
             this.tabCategory.Name = "tabCategory";
-            this.tabCategory.Size = new System.Drawing.Size(814, 468);
+            this.tabCategory.Size = new System.Drawing.Size(1054, 412);
             // 
             // panel7
             // 
@@ -486,7 +475,7 @@
             this.panel7.Controls.Add(this.label12);
             this.panel7.Controls.Add(this.txtIDC);
             this.panel7.Controls.Add(this.label14);
-            this.panel7.Location = new System.Drawing.Point(431, 60);
+            this.panel7.Location = new System.Drawing.Point(608, 60);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(380, 349);
             this.panel7.TabIndex = 8;
@@ -554,16 +543,17 @@
             this.panel9.Controls.Add(this.dgvCategory);
             this.panel9.Location = new System.Drawing.Point(3, 60);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(422, 349);
+            this.panel9.Size = new System.Drawing.Size(599, 349);
             this.panel9.TabIndex = 7;
             // 
             // dgvCategory
             // 
+            this.dgvCategory.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvCategory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCategory.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvCategory.Location = new System.Drawing.Point(0, 0);
             this.dgvCategory.Name = "dgvCategory";
-            this.dgvCategory.Size = new System.Drawing.Size(422, 349);
+            this.dgvCategory.Size = new System.Drawing.Size(599, 349);
             this.dgvCategory.TabIndex = 0;
             // 
             // panel10
@@ -616,56 +606,36 @@
             this.tabCompany.Controls.Add(this.panel12);
             this.tabCompany.Controls.Add(this.panel13);
             this.tabCompany.Controls.Add(this.panel14);
-            this.tabCompany.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("tabDepot.ImageOptions.Image")));
+            this.tabCompany.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("tabCompany.ImageOptions.Image")));
             this.tabCompany.Name = "tabCompany";
-            this.tabCompany.Size = new System.Drawing.Size(814, 468);
+            this.tabCompany.Size = new System.Drawing.Size(1054, 412);
             // 
             // panel11
             // 
-            this.panel11.Controls.Add(this.chkAvailable);
-            this.panel11.Controls.Add(this.label8);
-            this.panel11.Controls.Add(this.txtDepotD);
+            this.panel11.Controls.Add(this.txtNameD);
             this.panel11.Controls.Add(this.label13);
             this.panel11.Controls.Add(this.txtIDD);
             this.panel11.Controls.Add(this.label16);
-            this.panel11.Location = new System.Drawing.Point(431, 60);
+            this.panel11.Location = new System.Drawing.Point(620, 60);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(380, 349);
             this.panel11.TabIndex = 8;
             // 
-            // chkAvailable
+            // txtNameD
             // 
-            this.chkAvailable.AutoSize = true;
-            this.chkAvailable.Location = new System.Drawing.Point(84, 112);
-            this.chkAvailable.Name = "chkAvailable";
-            this.chkAvailable.Size = new System.Drawing.Size(15, 14);
-            this.chkAvailable.TabIndex = 10;
-            this.chkAvailable.UseVisualStyleBackColor = true;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(3, 112);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(75, 17);
-            this.label8.TabIndex = 9;
-            this.label8.Text = "Available";
-            // 
-            // txtDepotD
-            // 
-            this.txtDepotD.Location = new System.Drawing.Point(84, 60);
-            this.txtDepotD.Name = "txtDepotD";
-            this.txtDepotD.Size = new System.Drawing.Size(287, 25);
-            this.txtDepotD.TabIndex = 8;
+            this.txtNameD.Location = new System.Drawing.Point(84, 60);
+            this.txtNameD.Name = "txtNameD";
+            this.txtNameD.Size = new System.Drawing.Size(287, 25);
+            this.txtNameD.TabIndex = 8;
             // 
             // label13
             // 
             this.label13.AutoSize = true;
             this.label13.Location = new System.Drawing.Point(27, 63);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(51, 17);
+            this.label13.Size = new System.Drawing.Size(50, 17);
             this.label13.TabIndex = 3;
-            this.label13.Text = "Depot";
+            this.label13.Text = "Name";
             // 
             // txtIDD
             // 
@@ -711,20 +681,21 @@
             // 
             // panel13
             // 
-            this.panel13.Controls.Add(this.dgvDepot);
+            this.panel13.Controls.Add(this.dgvCompany);
             this.panel13.Location = new System.Drawing.Point(3, 60);
             this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(422, 349);
+            this.panel13.Size = new System.Drawing.Size(611, 349);
             this.panel13.TabIndex = 7;
             // 
-            // dgvDepot
+            // dgvCompany
             // 
-            this.dgvDepot.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDepot.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvDepot.Location = new System.Drawing.Point(0, 0);
-            this.dgvDepot.Name = "dgvDepot";
-            this.dgvDepot.Size = new System.Drawing.Size(422, 349);
-            this.dgvDepot.TabIndex = 0;
+            this.dgvCompany.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvCompany.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCompany.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvCompany.Location = new System.Drawing.Point(0, 0);
+            this.dgvCompany.Name = "dgvCompany";
+            this.dgvCompany.Size = new System.Drawing.Size(611, 349);
+            this.dgvCompany.TabIndex = 0;
             // 
             // panel14
             // 
@@ -778,7 +749,7 @@
             this.tabAccount.Controls.Add(this.panel18);
             this.tabAccount.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("tabAccount.ImageOptions.Image")));
             this.tabAccount.Name = "tabAccount";
-            this.tabAccount.Size = new System.Drawing.Size(814, 468);
+            this.tabAccount.Size = new System.Drawing.Size(1054, 412);
             // 
             // panel15
             // 
@@ -788,7 +759,7 @@
             this.panel15.Controls.Add(this.label22);
             this.panel15.Controls.Add(this.txtUsernameA);
             this.panel15.Controls.Add(this.label23);
-            this.panel15.Location = new System.Drawing.Point(431, 60);
+            this.panel15.Location = new System.Drawing.Point(629, 60);
             this.panel15.Name = "panel15";
             this.panel15.Size = new System.Drawing.Size(380, 349);
             this.panel15.TabIndex = 8;
@@ -874,7 +845,7 @@
             this.panel17.Controls.Add(this.dgvAccount);
             this.panel17.Location = new System.Drawing.Point(3, 60);
             this.panel17.Name = "panel17";
-            this.panel17.Size = new System.Drawing.Size(422, 349);
+            this.panel17.Size = new System.Drawing.Size(599, 349);
             this.panel17.TabIndex = 7;
             // 
             // dgvAccount
@@ -884,7 +855,7 @@
             this.dgvAccount.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvAccount.Location = new System.Drawing.Point(0, 0);
             this.dgvAccount.Name = "dgvAccount";
-            this.dgvAccount.Size = new System.Drawing.Size(422, 349);
+            this.dgvAccount.Size = new System.Drawing.Size(599, 349);
             this.dgvAccount.TabIndex = 0;
             // 
             // panel18
@@ -930,11 +901,21 @@
             this.btnAddA.TabIndex = 0;
             this.btnAddA.Text = "Add";
             // 
+            // dgvBike
+            // 
+            this.dgvBike.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvBike.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvBike.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvBike.Location = new System.Drawing.Point(0, 0);
+            this.dgvBike.Name = "dgvBike";
+            this.dgvBike.Size = new System.Drawing.Size(653, 349);
+            this.dgvBike.TabIndex = 0;
+            // 
             // AdminX
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(814, 468);
+            this.ClientSize = new System.Drawing.Size(1054, 468);
             this.Controls.Add(this.tabPane1);
             this.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.Shadow;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
@@ -956,7 +937,6 @@
             this.panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.txtSearchB.Properties)).EndInit();
             this.panel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvBike)).EndInit();
             this.panel3.ResumeLayout(false);
             this.tabCategory.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
@@ -974,7 +954,7 @@
             this.panel12.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.txtSearchD.Properties)).EndInit();
             this.panel13.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDepot)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCompany)).EndInit();
             this.panel14.ResumeLayout(false);
             this.tabAccount.ResumeLayout(false);
             this.panel15.ResumeLayout(false);
@@ -985,6 +965,7 @@
             this.panel17.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAccount)).EndInit();
             this.panel18.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBike)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1022,7 +1003,6 @@
         private DevExpress.XtraEditors.SimpleButton btnSearchB;
         private DevExpress.XtraEditors.TextEdit txtSearchB;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.DataGridView dgvBike;
         private System.Windows.Forms.Panel panel3;
         private DevExpress.XtraEditors.SimpleButton btnView;
         private DevExpress.XtraEditors.SimpleButton btnUpdateB;
@@ -1044,9 +1024,7 @@
         private DevExpress.XtraEditors.TextEdit txtIDC;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Panel panel11;
-        private System.Windows.Forms.CheckBox chkAvailable;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox txtDepotD;
+        private System.Windows.Forms.TextBox txtNameD;
         private System.Windows.Forms.Label label13;
         private DevExpress.XtraEditors.TextEdit txtIDD;
         private System.Windows.Forms.Label label16;
@@ -1054,7 +1032,7 @@
         private DevExpress.XtraEditors.SimpleButton btnSearchD;
         private DevExpress.XtraEditors.TextEdit txtSearchD;
         private System.Windows.Forms.Panel panel13;
-        private System.Windows.Forms.DataGridView dgvDepot;
+        private System.Windows.Forms.DataGridView dgvCompany;
         private System.Windows.Forms.Panel panel14;
         private DevExpress.XtraEditors.SimpleButton btnViewD;
         private DevExpress.XtraEditors.SimpleButton btnUpdateD;
@@ -1077,5 +1055,6 @@
         private DevExpress.XtraEditors.SimpleButton btnDeleteA;
         private DevExpress.XtraEditors.SimpleButton btnAddA;
         private System.Windows.Forms.CheckBox chkAdminA;
+        private System.Windows.Forms.DataGridView dgvBike;
     }
 }
