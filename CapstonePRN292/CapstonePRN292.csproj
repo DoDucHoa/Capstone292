@@ -73,6 +73,7 @@
     </Compile>
     <Compile Include="2. Business Layer\DepotDAO.cs" />
     <Compile Include="2. Business Layer\RegisterDAO.cs" />
+    <Compile Include="3. Data Layer\Bike.cs" />
     <Compile Include="3. Data Layer\DBConnection.cs" />
     <Compile Include="1. Form Layer\AdminX.cs">
       <SubType>Form</SubType>

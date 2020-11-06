@@ -1,12 +1,15 @@
-﻿using System.Data;
+﻿using CapstonePRN292._3._Data_Layer;
+using System;
+using System.Data;
 using System.Data.SqlClient;
+using System.Linq.Expressions;
 using System.Windows.Forms;
 
 namespace CapstonePRN292.DBHelper
 {
-    class DBConnection
+    public class DBConnection
     {
-        string connectionString = @"Data Source=.\SQLEXPRESS;Initial Catalog=BikeSaleSystemDB;User ID=sa;password=sa123456";
+        string connectionString = @"Data Source=LAPTOP-4LFO15O4\TRINT;Initial Catalog=BikeSaleSystemDB;User ID=sa;password=12345";
 
         public DataTable dataTable(string sql)
         {
@@ -22,7 +25,6 @@ namespace CapstonePRN292.DBHelper
             }
             return dataTable;
         }
-
         public bool checkLogin(string us, string pw)
         {
             SqlConnection connection = new SqlConnection(connectionString);
@@ -93,6 +95,57 @@ namespace CapstonePRN292.DBHelper
             }
         }
         
+        public DataTable getBike()
+        {
+            string sql = "select * from Bike";
+            SqlConnection connection = new SqlConnection(connectionString);
+            SqlCommand command = new SqlCommand(sql, connection);
+            SqlDataAdapter adapter = new SqlDataAdapter(command);
+            DataTable dtBike = new DataTable();
+            try
+            {
+                if(connection.State == ConnectionState.Closed)
+                {
+                    connection.Open();
+                }
+                adapter.Fill(dtBike);
+            }
+            catch (SqlException se)
+            {
+                throw new Exception(se.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return dtBike;
+        }
+
+
+        public bool addNewBike(Bike b)
+        {
+            string sql = "Insert Bike values(@Name,@Category,@Price,@Company,@Version,@CC)";
+            SqlConnection connection = new SqlConnection(connectionString);
+            SqlCommand command = new SqlCommand(sql, connection);
+            //command.Parameters.AddWithValue("@ID", b.IDB);
+            command.Parameters.AddWithValue("@Name", b.NameB);
+            command.Parameters.AddWithValue("@Category", b.CategoryB);
+            command.Parameters.AddWithValue("@Price", b.PriceB);
+            command.Parameters.AddWithValue("@Company", b.CompanyB);
+            command.Parameters.AddWithValue("@Version", b.VersionB);
+            command.Parameters.AddWithValue("@CC", b.CCB);
+
+            if (connection.State == ConnectionState.Closed)
+            {
+                connection.Open();  
+            }
+            int count = command.ExecuteNonQuery();
+            return (count > 0);
+        }
+
+ 
+
+
 
         //string connectionString = @"Data Source=.\SQLEXPRESS;Initial Catalog=BikeSaleSystemDB;User ID=sa;password=sa123456";
         //public DataTable ExecuteQuery(string query, object[] parameter = null)
