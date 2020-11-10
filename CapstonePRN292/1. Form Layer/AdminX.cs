@@ -149,9 +149,9 @@ namespace CapstonePRN292
         private void btnAddB_Click(object sender, System.EventArgs e)
         {
             string Name = txtNameB.Text;
-            int Category = cbCategoryBike.SelectedIndex + 1;
+            int Category = int.Parse(cbCategoryBike.SelectedValue.ToString());
             float Price = float.Parse(txtPriceB.Text);
-            int Company = cbCompanyBike.SelectedIndex + 1;
+            int Company = int.Parse(cbCompanyBike.SelectedValue.ToString());
             int Version = int.Parse(txtVersionB.Text);
             int CC = int.Parse(txtCCB.Text);
             int Quantity = int.Parse(txtQuantityBike.Text);
@@ -177,9 +177,9 @@ namespace CapstonePRN292
         {
             int ID = int.Parse(txtIDB.Text);
             string Name = txtNameB.Text;
-            int Category = cbCategoryBike.SelectedIndex + 1;
+            int Category = int.Parse(cbCategoryBike.SelectedValue.ToString());
             float Price = float.Parse(txtPriceB.Text);
-            int Company = cbCompanyBike.SelectedIndex + 1;
+            int Company = int.Parse(cbCategoryBike.SelectedValue.ToString());
             int Version = int.Parse(txtVersionB.Text);
             int CC = int.Parse(txtCCB.Text);
             int Quantity = int.Parse(txtQuantityBike.Text);
