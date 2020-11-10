@@ -46,6 +46,7 @@ namespace CapstonePRN292
             }
             else
             {
+                // Notify
                 MessageBox.Show("You don't have permit to access this!", "Notify", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
