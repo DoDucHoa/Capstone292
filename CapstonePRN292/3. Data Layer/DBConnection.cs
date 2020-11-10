@@ -158,5 +158,20 @@ namespace CapstonePRN292.DBHelper
             int count = command.ExecuteNonQuery();
             return (count > 0);
         }
+    
+        public bool getRole(string sql)
+        {
+            SqlConnection connection = new SqlConnection(connectionString);
+            connection.Open();
+            SqlDataAdapter adapter = new SqlDataAdapter(sql, connection);
+            DataTable data = new DataTable();
+            adapter.Fill(data);
+            string result = data.Rows[0]["isAdmin"].ToString();
+            if (result.Equals("True"))
+            {
+                return true;
+            }
+            return false;
+        }
     }
 }

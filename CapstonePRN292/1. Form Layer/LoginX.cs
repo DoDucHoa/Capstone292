@@ -36,7 +36,7 @@ namespace CapstonePRN292
                 {
                     if (connection.checkLogin(us, pw))
                     {
-                        DepotX fr = new DepotX();
+                        DepotX fr = new DepotX(us);
                         this.Hide();
                         fr.ShowDialog();
                         this.Show();

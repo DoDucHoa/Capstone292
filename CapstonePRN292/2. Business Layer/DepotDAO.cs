@@ -32,5 +32,15 @@ namespace CapstonePRN292._2._Business_Layer
             DBConnection dBConnection = new DBConnection();
             dBConnection.createUser(sql, fullname, email, address, birth);
         }
+
+        public static bool isAdmin(string username)
+        {
+            string sql = "SELECT isAdmin " +
+                "FROM Account " +
+                "WHERE username='"+ username +"'";
+            DBConnection dBConnection = new DBConnection();
+            bool result = dBConnection.getRole(sql);
+            return result;
+        }
     }
 }

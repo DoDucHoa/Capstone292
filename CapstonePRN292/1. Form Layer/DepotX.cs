@@ -10,16 +10,20 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using CapstonePRN292.DBHelper;
 using CapstonePRN292._1._Form_Layer;
+using CapstonePRN292._2._Business_Layer;
 
 namespace CapstonePRN292
 {
     public partial class DepotX : DevExpress.XtraEditors.XtraForm
     {
-        public DepotX()
+        string username;
+        public DepotX(string username)
         {
+            this.username = username;
             InitializeComponent();
             loadCustomerTable();
             loadBikeTable();
+            loadComboBox();
         }
 
         void loadDepot()
@@ -34,8 +38,16 @@ namespace CapstonePRN292
 
         private void adminToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AdminX fr = new AdminX();
-            fr.ShowDialog();
+            bool isAdmin = DepotDAO.isAdmin(username);
+            if (isAdmin)
+            {
+                AdminX fr = new AdminX();
+                fr.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("You don't have permit to access this!", "Notify", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void logOutToolStripMenuItem_Click(object sender, EventArgs e)
@@ -107,6 +119,15 @@ namespace CapstonePRN292
         {
             string cusName = txtCusname.Text;
             string bikeName = txtBikeName.Text;
+        }
+
+        private void loadComboBox()
+        {
+            string sql_paymethod = "SELECT method " +
+                "FROM PaymentMethod";
+            DBConnection connection = new DBConnection();
+            cbPayment.DataSource = connection.dataTable(sql_paymethod);
+            cbPayment.DisplayMember = "method";
         }
     }
 }
