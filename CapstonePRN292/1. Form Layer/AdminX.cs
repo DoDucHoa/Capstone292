@@ -10,6 +10,8 @@ namespace CapstonePRN292
     {
         DBConnection B = new DBConnection();
         DataTable dtBike;
+        DataTable dtCa;
+        DataTable dtCo;
         public AdminX()
         {
             InitializeComponent();
@@ -94,13 +96,29 @@ namespace CapstonePRN292
             }
         }
 
+        private void dgvCategory_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = this.dgvCategory.Rows[e.RowIndex];
+                txtIDC.Text = row.Cells[0].Value.ToString();
+                txtCategoryC.Text = row.Cells[1].Value.ToString();
+            }
+        }
+
+        private void dgvCompany_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = this.dgvCompany.Rows[e.RowIndex];
+                txtIDD.Text = row.Cells[0].Value.ToString();
+                txtNameD.Text = row.Cells[1].Value.ToString();
+            }
+        }
+
         private void getAllBike()
         {
             dtBike = B.getBike();
-            txtIDB.DataBindings.Clear();
-            txtNameB.DataBindings.Clear();
-            cbCategoryBike.DataBindings.Clear();
-            cbCompanyBike.DataBindings.Clear();
             dgvBike.DataSource = dtBike;
             txtIDB.Text = "";
             txtNameB.Text = "";
@@ -109,6 +127,23 @@ namespace CapstonePRN292
             txtVersionB.Text = "";
             cbCategoryBike.SelectedIndex = 1;
             cbCompanyBike.SelectedIndex = 1;
+        }
+
+        private void getAllCategory()
+        {
+            dtCa = B.getCategory();
+            dgvCategory.DataSource = dtCa;
+            txtIDC.Text = "";
+            cbCategoryBike.SelectedIndex = 1;
+            
+        }
+
+        private void getAllCompany()
+        {
+            dtCo = B.getCompany();
+            dgvCompany.DataSource = dtCo;
+            txtIDD.Text = "";
+            txtNameD.Text = "";
         }
 
         private void btnAddB_Click(object sender, System.EventArgs e)
@@ -137,6 +172,121 @@ namespace CapstonePRN292
             getAllBike();
             loadBikeList();
         }
- 
+
+        private void btnUpdateB_Click(object sender, System.EventArgs e)
+        {
+            int ID = int.Parse(txtIDB.Text);
+            string Name = txtNameB.Text;
+            int Category = cbCategoryBike.SelectedIndex + 1;
+            float Price = float.Parse(txtPriceB.Text);
+            int Company = cbCompanyBike.SelectedIndex + 1;
+            int Version = int.Parse(txtVersionB.Text);
+            int CC = int.Parse(txtCCB.Text);
+            int Quantity = int.Parse(txtQuantityBike.Text);
+
+            Bike b = new Bike
+            {
+                IDB = ID,
+                NameB = Name,
+                CategoryB = Category,
+                PriceB = Price,
+                CompanyB = Company,
+                VersionB = Version,
+                CCB = CC,
+                QuantityB = Quantity
+            };
+            bool r = B.updateBike(b);
+            string s = (r == true ? "successful" : "fail");
+            MessageBox.Show("Update " + s, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            getAllBike();
+            loadBikeList();
+        }
+
+        private void btnDelete_Click(object sender, System.EventArgs e)
+        {
+            int ID = int.Parse(txtIDB.Text);
+            bool r = B.removeBike(ID);
+            string s = (r == true ? "successful" : "fail");
+            MessageBox.Show("Delete " + s, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            getAllBike();
+            loadBikeList();
+        }
+
+        private void btnAddC_Click(object sender, System.EventArgs e)
+        {
+            string Category = txtCategoryC.Text;
+            Category Ca = new Category
+            {
+                CategoryC = Category
+            };
+            bool Q = B.addNewCategory(Ca);
+            string P = (Q == true ? "successful" : "fail");
+            MessageBox.Show("Add " + P, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            getAllCategory();
+
+        }
+
+        private void btnUpdateC_Click(object sender, System.EventArgs e)
+        {
+            int ID = int.Parse(txtIDC.Text);
+            string Category = txtCategoryC.Text;
+            Category Ca = new Category
+            {
+                IDC = ID,
+                CategoryC = Category
+            };
+            bool Q = B.updateCategory(Ca);
+            string P = (Q == true ? "successful" : "fail");
+            MessageBox.Show("Update " + P, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            getAllCategory();
+        }
+
+        private void btnDeleteC_Click_1(object sender, System.EventArgs e)
+        {
+            int ID = int.Parse(txtIDC.Text);
+            bool Q = B.removeCategory(ID);
+            string P = (Q == true ? "successful" : "fail");
+            MessageBox.Show("Delete " + P, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            getAllCategory();
+        }
+
+        private void btnAddD_Click(object sender, System.EventArgs e)
+        {
+            string Name = txtNameD.Text;
+            Company Co = new Company
+            {
+                NameD = Name
+            };
+            bool F = B.addNewCompany(Co);
+            string G = (F == true ? "successful" : "fail");
+            MessageBox.Show("Add " + G, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            getAllCompany();
+        }
+
+        private void btnUpdateD_Click(object sender, System.EventArgs e)
+        {
+            int ID = int.Parse(txtIDD.Text);
+            string Name = txtNameD.Text;
+            Company Co = new Company
+            {
+                IDD = ID,
+                NameD = Name
+            };
+            bool F = B.updateCompany(Co);
+            string G = (F == true ? "successful" : "fail");
+            MessageBox.Show("Update " + G, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            getAllCompany();
+        }
+
+        private void btnDeleteD_Click(object sender, System.EventArgs e)
+        {
+            int ID = int.Parse(txtIDD.Text);
+            bool F = B.removeCompany(ID);
+            string G = (F == true ? "successful" : "fail");
+            MessageBox.Show("Update " + G, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            getAllCompany();
+        }
+
+        
     }
 }
