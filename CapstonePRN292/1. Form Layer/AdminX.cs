@@ -21,6 +21,14 @@ namespace CapstonePRN292
             loadAccountList();
         }
 
+        private void loadComponent()
+        {
+            loadBikeList();
+            loadCategoryList();
+            loadCompanyList();
+            loadAccountList();
+        }
+
         private void loadBikeList()
         {
             string sql = "SELECT dbo.Bike.id AS [ID]," +
@@ -134,8 +142,7 @@ namespace CapstonePRN292
             dtCa = B.getCategory();
             dgvCategory.DataSource = dtCa;
             txtIDC.Text = "";
-            cbCategoryBike.SelectedIndex = 1;
-            
+            cbCategoryBike.SelectedIndex = 1;         
         }
 
         private void getAllCompany()
@@ -170,7 +177,7 @@ namespace CapstonePRN292
             string s = (r == true ? "successful" : "fail");
             MessageBox.Show("Add " + s, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             getAllBike();
-            loadBikeList();
+            loadComponent();
         }
 
         private void btnUpdateB_Click(object sender, System.EventArgs e)
@@ -179,7 +186,7 @@ namespace CapstonePRN292
             string Name = txtNameB.Text;
             int Category = int.Parse(cbCategoryBike.SelectedValue.ToString());
             float Price = float.Parse(txtPriceB.Text);
-            int Company = int.Parse(cbCategoryBike.SelectedValue.ToString());
+            int Company = int.Parse(cbCompanyBike.SelectedValue.ToString());
             int Version = int.Parse(txtVersionB.Text);
             int CC = int.Parse(txtCCB.Text);
             int Quantity = int.Parse(txtQuantityBike.Text);
@@ -199,7 +206,7 @@ namespace CapstonePRN292
             string s = (r == true ? "successful" : "fail");
             MessageBox.Show("Update " + s, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             getAllBike();
-            loadBikeList();
+            loadComponent();
         }
 
         private void btnDelete_Click(object sender, System.EventArgs e)
@@ -209,7 +216,7 @@ namespace CapstonePRN292
             string s = (r == true ? "successful" : "fail");
             MessageBox.Show("Delete " + s, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             getAllBike();
-            loadBikeList();
+            loadComponent();
         }
 
         private void btnAddC_Click(object sender, System.EventArgs e)
@@ -223,7 +230,7 @@ namespace CapstonePRN292
             string P = (Q == true ? "successful" : "fail");
             MessageBox.Show("Add " + P, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             getAllCategory();
-
+            loadComponent();
         }
 
         private void btnUpdateC_Click(object sender, System.EventArgs e)
@@ -239,6 +246,7 @@ namespace CapstonePRN292
             string P = (Q == true ? "successful" : "fail");
             MessageBox.Show("Update " + P, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             getAllCategory();
+            loadComponent();
         }
 
         private void btnDeleteC_Click_1(object sender, System.EventArgs e)
@@ -248,6 +256,7 @@ namespace CapstonePRN292
             string P = (Q == true ? "successful" : "fail");
             MessageBox.Show("Delete " + P, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             getAllCategory();
+            loadComponent();
         }
 
         private void btnAddD_Click(object sender, System.EventArgs e)
@@ -261,6 +270,7 @@ namespace CapstonePRN292
             string G = (F == true ? "successful" : "fail");
             MessageBox.Show("Add " + G, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             getAllCompany();
+            loadComponent();
         }
 
         private void btnUpdateD_Click(object sender, System.EventArgs e)
@@ -276,6 +286,7 @@ namespace CapstonePRN292
             string G = (F == true ? "successful" : "fail");
             MessageBox.Show("Update " + G, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             getAllCompany();
+            loadComponent();
         }
 
         private void btnDeleteD_Click(object sender, System.EventArgs e)
@@ -283,10 +294,9 @@ namespace CapstonePRN292
             int ID = int.Parse(txtIDD.Text);
             bool F = B.removeCompany(ID);
             string G = (F == true ? "successful" : "fail");
-            MessageBox.Show("Update " + G, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Delete " + G, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             getAllCompany();
-        }
-
-        
+            loadComponent();
+        } 
     }
 }
