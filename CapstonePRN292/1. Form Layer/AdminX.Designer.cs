@@ -109,6 +109,8 @@
             this.btnAddA = new DevExpress.XtraEditors.SimpleButton();
             this.txtCCB = new System.Windows.Forms.NumericUpDown();
             this.txtPriceB = new System.Windows.Forms.NumericUpDown();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtQuantityBike = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.tabPane1)).BeginInit();
             this.tabPane1.SuspendLayout();
             this.tabProfit.SuspendLayout();
@@ -149,6 +151,7 @@
             this.panel18.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtCCB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPriceB)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtQuantityBike)).BeginInit();
             this.SuspendLayout();
             // 
             // tabPane1
@@ -168,9 +171,9 @@
             this.tabCategory,
             this.tabCompany,
             this.tabAccount});
-            this.tabPane1.RegularSize = new System.Drawing.Size(1056, 468);
+            this.tabPane1.RegularSize = new System.Drawing.Size(1056, 495);
             this.tabPane1.SelectedPage = this.tabProfit;
-            this.tabPane1.Size = new System.Drawing.Size(1056, 468);
+            this.tabPane1.Size = new System.Drawing.Size(1056, 495);
             this.tabPane1.TabIndex = 0;
             this.tabPane1.Text = "Profit";
             // 
@@ -243,10 +246,12 @@
             this.tabBike.Controls.Add(this.panel3);
             this.tabBike.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("tabBike.ImageOptions.Image")));
             this.tabBike.Name = "tabBike";
-            this.tabBike.Size = new System.Drawing.Size(1056, 412);
+            this.tabBike.Size = new System.Drawing.Size(1056, 439);
             // 
             // panel6
             // 
+            this.panel6.Controls.Add(this.txtQuantityBike);
+            this.panel6.Controls.Add(this.label8);
             this.panel6.Controls.Add(this.cbCompanyBike);
             this.panel6.Controls.Add(this.cbCategoryBike);
             this.panel6.Controls.Add(this.txtCCB);
@@ -263,7 +268,7 @@
             this.panel6.Controls.Add(this.label1);
             this.panel6.Location = new System.Drawing.Point(662, 60);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(380, 349);
+            this.panel6.Size = new System.Drawing.Size(380, 372);
             this.panel6.TabIndex = 5;
             // 
             // cbCompanyBike
@@ -397,7 +402,7 @@
             this.panel4.Controls.Add(this.dgvBike);
             this.panel4.Location = new System.Drawing.Point(3, 60);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(653, 349);
+            this.panel4.Size = new System.Drawing.Size(653, 372);
             this.panel4.TabIndex = 0;
             // 
             // dgvBike
@@ -408,7 +413,7 @@
             this.dgvBike.Location = new System.Drawing.Point(0, 0);
             this.dgvBike.Name = "dgvBike";
             this.dgvBike.RowHeadersWidth = 51;
-            this.dgvBike.Size = new System.Drawing.Size(653, 349);
+            this.dgvBike.Size = new System.Drawing.Size(653, 372);
             this.dgvBike.TabIndex = 0;
             this.dgvBike.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBike_CellClick);
             // 
@@ -890,11 +895,32 @@
             this.txtPriceB.Size = new System.Drawing.Size(287, 25);
             this.txtPriceB.TabIndex = 12;
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(10, 339);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(69, 17);
+            this.label8.TabIndex = 16;
+            this.label8.Text = "Quantity";
+            // 
+            // txtQuantityBike
+            // 
+            this.txtQuantityBike.Location = new System.Drawing.Point(84, 337);
+            this.txtQuantityBike.Maximum = new decimal(new int[] {
+            1215752192,
+            23,
+            0,
+            0});
+            this.txtQuantityBike.Name = "txtQuantityBike";
+            this.txtQuantityBike.Size = new System.Drawing.Size(287, 25);
+            this.txtQuantityBike.TabIndex = 17;
+            // 
             // AdminX
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1056, 468);
+            this.ClientSize = new System.Drawing.Size(1056, 495);
             this.Controls.Add(this.tabPane1);
             this.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.Shadow;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
@@ -945,6 +971,7 @@
             this.panel18.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.txtCCB)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPriceB)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtQuantityBike)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1031,5 +1058,7 @@
         private System.Windows.Forms.ComboBox cbCompanyBike;
         private System.Windows.Forms.NumericUpDown txtCCB;
         private System.Windows.Forms.NumericUpDown txtPriceB;
+        private System.Windows.Forms.NumericUpDown txtQuantityBike;
+        private System.Windows.Forms.Label label8;
     }
 }

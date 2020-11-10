@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using CapstonePRN292.DBHelper;
+using CapstonePRN292._1._Form_Layer;
 
 namespace CapstonePRN292
 {
@@ -52,13 +53,11 @@ namespace CapstonePRN292
     
         private void loadCustomerTable()
         {
-            string sql = "SELECT dbo.Account.fullname AS [Full Name], " +
-                "dbo.AccountInfo.age AS [Age], " +
-                "dbo.AccountInfo.address AS [Address], " +
-                "dbo.AccountInfo.birth AS [Birth] " +
-                "FROM dbo.Account, dbo.AccountInfo " +
-                "WHERE dbo.Account.username = dbo.AccountInfo.username " +
-                "ORDER BY fullname";
+            string sql = "SELECT name AS [Full Name]," +
+                "email AS [Email]," +
+                "address AS [Address]," +
+                "birth AS [Birth] " +
+                "FROM dbo.Customer";
             DBConnection connection = new DBConnection();
             dgvCustomer.DataSource = connection.dataTable(sql);
         }
@@ -76,6 +75,38 @@ namespace CapstonePRN292
                 "AND dbo.Bike.idCompany = dbo.Company.id";
             DBConnection connection = new DBConnection();
             dgvBike.DataSource = connection.dataTable(sql);
+        }
+
+        private void accountsInformationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AddCustomer fr = new AddCustomer();
+            fr.ShowDialog();
+            loadCustomerTable();
+        }
+
+        private void dgvCustomer_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = this.dgvCustomer.Rows[e.RowIndex];
+                txtCusname.Text = row.Cells[0].Value.ToString();
+                txtAddress.Text = row.Cells[2].Value.ToString();
+            }
+        }
+
+        private void dgvBike_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = this.dgvBike.Rows[e.RowIndex];
+                txtBikeName.Text = row.Cells[0].Value.ToString();
+            }
+        }
+
+        private void btnPay_Click(object sender, EventArgs e)
+        {
+            string cusName = txtCusname.Text;
+            string bikeName = txtBikeName.Text;
         }
     }
 }

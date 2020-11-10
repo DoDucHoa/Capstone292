@@ -27,7 +27,8 @@ namespace CapstonePRN292
                 "dbo.Bike.price AS [Price]," +
                 "dbo.Company.name AS [Company]," +
                 "dbo.Bike.version AS [Version]," +
-                "dbo.Bike.cc AS [CC] " +
+                "dbo.Bike.cc AS [CC]," +
+                "dbo.Bike.quantity AS [Quantity] " +
                 "FROM dbo.Bike, dbo.Company, dbo.BikeCategory " +
                 "WHERE dbo.Bike.idCategory = dbo.BikeCategory.id " +
                 "AND dbo.Bike.idCompany = dbo.Company.id";
@@ -89,7 +90,7 @@ namespace CapstonePRN292
                 cbCompanyBike.Text = row.Cells[4].Value.ToString();
                 txtVersionB.Text = row.Cells[5].Value.ToString();
                 txtCCB.Text = row.Cells[6].Value.ToString();
-
+                txtQuantityBike.Text = row.Cells[7].Value.ToString();
             }
         }
 
@@ -118,6 +119,7 @@ namespace CapstonePRN292
             int Company = cbCompanyBike.SelectedIndex + 1;
             int Version = int.Parse(txtVersionB.Text);
             int CC = int.Parse(txtCCB.Text);
+            int Quantity = int.Parse(txtQuantityBike.Text);
 
             Bike b = new Bike
             {
@@ -126,7 +128,8 @@ namespace CapstonePRN292
                 PriceB = Price,
                 CompanyB = Company,
                 VersionB = Version,
-                CCB = CC
+                CCB = CC,
+                QuantityB = Quantity
             };
             bool r = B.addNewBike(b);
             string s = (r == true ? "successful" : "fail");

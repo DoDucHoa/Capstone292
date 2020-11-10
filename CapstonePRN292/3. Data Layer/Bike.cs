@@ -15,6 +15,6 @@ namespace CapstonePRN292._3._Data_Layer
         public int CompanyB { get; set; }
         public int VersionB { get; set; }
         public int CCB { get; set; }
-
+        public int QuantityB { get; set; }
     }
 }

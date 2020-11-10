@@ -4,13 +4,15 @@ GO
 USE BikeSaleSystemDB
 GO	
 
-CREATE TABLE Depot --nha kho
+CREATE TABLE Customer
 (
 	id INT IDENTITY PRIMARY KEY,
-	name NVARCHAR(50),
-	vailable NVARCHAR(50) DEFAULT N'Empty'
-)
-GO	
+	name NVARCHAR(50) NOT NULL,
+	email VARCHAR(50) NOT NULL,
+	address NVARCHAR(100) NOT NULL,
+	birth DATE NOT NULL
+) 
+GO
 
 CREATE TABLE Account
 (
@@ -27,7 +29,7 @@ CREATE TABLE AccountInfo
 	username NVARCHAR(50) PRIMARY KEY,
 	age INT NOT NULL,
 	address NVARCHAR(50) DEFAULT N'N/A',
-	birth DATE
+	birth DATE,
 
 	FOREIGN KEY (username) REFERENCES dbo.Account(username)
 )
@@ -54,55 +56,36 @@ CREATE TABLE Bike
 	idCategory INT NOT NULL,
 	price FLOAT NOT NULL DEFAULT 0,
 	idCompany INT NOT NULL,
-	version NCHAR(50) NOT NULL,
-	cc INT NOT NULL
+	version INT NOT NULL,
+	cc INT NOT NULL,
+	quantity INT NOT NULL,
 
 	FOREIGN KEY (idCategory) REFERENCES dbo.BikeCategory(id),
 	FOREIGN KEY (idCompany) REFERENCES dbo.Company(id)
 )
-GO	
+GO
+
+CREATE TABLE PaymentMethod
+(
+	id INT IDENTITY PRIMARY KEY,
+	method VARCHAR(50) NOT NULL
+)
+GO
 
 CREATE TABLE Bill
 (
 	id INT IDENTITY PRIMARY KEY,
 	DateCheckIn DATE NOT NULL DEFAULT GETDATE(),
-	DateCheckOut DATE NOT NULL,
-	idDepot INT NOT NULL,
-	checkPay BIT NOT NULL --da thanh toan hay chua
-
-	FOREIGN KEY (idDepot) REFERENCES dbo.Depot(id)
-)
-GO	
-
-CREATE TABLE BillInfo
-(
-	id INT IDENTITY PRIMARY KEY,
-	idBill INT NOT NULL,
+	totalPrice FLOAT NOT NULL,
+	quantity INT NOT NULL DEFAULT 1,
+	idPaymentMethod INT NOT NULL,
 	idBike INT NOT NULL,
+	idCustomer INT NOT NULL,
 
-	FOREIGN KEY (idBill) REFERENCES dbo.Bill(id),
-	FOREIGN KEY (idBike) REFERENCES dbo.Bike(id)
+	FOREIGN KEY (idCustomer) REFERENCES dbo.Customer(id),
+	FOREIGN KEY (idBike) REFERENCES dbo.Bike(id),
+	FOREIGN KEY (idPaymentMethod) REFERENCES dbo.PaymentMethod(id)
 )
-GO	
-
-DECLARE @i INT = 0
-
-WHILE @i <= 10
-BEGIN
-	INSERT dbo.Depot
-	        ( name)
-	VALUES  ( N'Store ' + CAST(@i AS NVARCHAR(100)) -- name - nvarchar(50)
-	          )
-	SET @i = @i + 1
-END
-GO
-
-CREATE PROC	USP_GetAccountByUserName --tao procedure
-@username nvarchar(50)
-AS	
-BEGIN	
-	SELECT * FROM dbo.Account WHERE	UserName = @username
-END
 GO
 
 INSERT INTO dbo.Account
@@ -126,6 +109,35 @@ VALUES  ( N'sa', -- username - nvarchar(50)
           20, -- age - int
           N'101 TQK', -- address - nvarchar(50)
           '06-15-2000'  -- birth - date
+          )
+GO
+
+INSERT INTO dbo.PaymentMethod
+        ( method )
+VALUES  (
+          'Credit Cards'  -- method - varchar(50)
+          ),
+		  ('Mobile Payment'),
+		  ('Bank Transfer'),
+		  ('Ewallet'),
+		  ('Prepaid Card'),
+		  ('Direct Deposit'),
+		  ('Cash')
+GO          
+
+INSERT INTO dbo.Customer
+        ( name, email, address, birth )
+VALUES  (  
+          N'Hoa Do', -- name - nvarchar(50)
+          N'hoado@gmail.com', -- age - int
+          N'101 TKT', -- address - nvarchar(100)
+          '06-15-2000' 
+          ),
+		  (  
+          N'Thanh Tri', -- name - nvarchar(50)
+          N'thanhtri@gmail.com', -- age - int
+          N'101 TQK', -- address - nvarchar(100)
+          '03-03-1999'  
           )
 GO
 
@@ -174,24 +186,6 @@ VALUES  ( N'sc', -- username - nvarchar(50)
 		  
 GO
 
-INSERT INTO dbo.Bike
-        ( name ,
-          idCategory ,
-          price ,
-          idCompany ,
-          version ,
-          cc
-        )
-VALUES  ( N'Winner X' , -- name - nvarchar(50)
-          1 , -- idCategory - int
-          50000000.0 , -- price - float
-          1 , -- idCompany - int
-          N'2019' , -- version - nchar(50)
-          150  -- cc - int
-        )
-GO
-
-
 INSERT INTO dbo.BikeCategory
         ( name )
 VALUES  ( N'Standard'  -- name - nvarchar(50)
@@ -212,4 +206,26 @@ VALUES  ( N'Honda'  -- name - nvarchar(50)
 		  (N'Piaggio'),
 		  (N'SYM')
 GO
+
+INSERT INTO dbo.Bike
+        ( 
+          name ,
+          idCategory ,
+          price ,
+          idCompany ,
+          version ,
+          cc ,
+          quantity
+        )
+VALUES  ( 
+          N'Winner X' , -- name - nvarchar(50)
+          1 , -- idCategory - int
+          50000000.0 , -- price - float
+          1 , -- idCompany - int
+          2019 , -- version - int
+          150 , -- cc - int
+          10  -- quantity - int
+        )
+GO
+
 

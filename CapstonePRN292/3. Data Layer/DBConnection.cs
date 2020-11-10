@@ -72,6 +72,21 @@ namespace CapstonePRN292.DBHelper
             connection.Close();
         }
 
+        public void createUser(string sql, string fullname, string email, string address, string birth)
+        {
+            SqlConnection connection = new SqlConnection(connectionString);
+            SqlCommand command = new SqlCommand(sql, connection);
+
+            command.Parameters.AddWithValue("name", fullname);
+            command.Parameters.AddWithValue("email", email);
+            command.Parameters.AddWithValue("address", address);
+            command.Parameters.AddWithValue("birth", birth);
+
+            connection.Open();
+            command.ExecuteNonQuery();
+            connection.Close();
+        }
+
         public bool checkExistUsername(string username)
         {
             SqlConnection connection = new SqlConnection(connectionString);
@@ -122,7 +137,6 @@ namespace CapstonePRN292.DBHelper
             }
             return dtBike;
         }
-
 
         public bool addNewBike(Bike b)
         {

@@ -459,3 +459,4 @@ E:\Code\Capstone\CapstonePRN292\obj\Debug\CapstonePRN292.csproj.CoreCompileInput
 E:\Code\Capstone\CapstonePRN292\obj\Debug\CapstonePRN292.csproj.CopyComplete
 E:\Code\Capstone\CapstonePRN292\obj\Debug\CapstonePRN292.exe
 E:\Code\Capstone\CapstonePRN292\obj\Debug\CapstonePRN292.pdb
+E:\Code\Capstone\CapstonePRN292\obj\Debug\CapstonePRN292._1._Form_Layer.AddCustomer.resources

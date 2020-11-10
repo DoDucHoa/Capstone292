@@ -1,4 +1,5 @@
 ﻿using CapstonePRN292._3._Data_Layer;
+using CapstonePRN292.DBHelper;
 using DevExpress.XtraReports.Data;
 using System;
 using System.Collections.Generic;
@@ -19,13 +20,17 @@ namespace CapstonePRN292._2._Business_Layer
             private set { DepotDAO.instance = value; }
         }
 
-        private DepotDAO() { }
+        public DepotDAO() { }
 
-        //public List<Depot> LoadDepotList()
-        //{
-        //    List<Depot> depotList = new List<Depot>();
-
-        //    DataTable dataTable = DataProvider.Instance.ex
-        //}
+        public void loadUserToDatabase(string fullname, string email, string address, string birth)
+        {
+            string sql = "INSERT INTO Customer " +
+                "VALUES (@name," +
+                "@email," +
+                "@address," +
+                "@birth)";
+            DBConnection dBConnection = new DBConnection();
+            dBConnection.createUser(sql, fullname, email, address, birth);
+        }
     }
 }
