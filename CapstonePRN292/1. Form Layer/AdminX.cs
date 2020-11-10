@@ -31,8 +31,18 @@ namespace CapstonePRN292
                 "FROM dbo.Bike, dbo.Company, dbo.BikeCategory " +
                 "WHERE dbo.Bike.idCategory = dbo.BikeCategory.id " +
                 "AND dbo.Bike.idCompany = dbo.Company.id";
+            string sql_category = "SELECT id, name " +
+                "FROM BikeCategory";
+            string sql_company = "SELECT id, name " +
+                "FROM Company";
             DBConnection connection = new DBConnection();
             dgvBike.DataSource = connection.dataTable(sql);
+            cbCategoryBike.DataSource = connection.dataTable(sql_category);
+            cbCategoryBike.DisplayMember = "name";
+            cbCategoryBike.ValueMember = "id";
+            cbCompanyBike.DataSource = connection.dataTable(sql_company);
+            cbCompanyBike.DisplayMember = "name";
+            cbCompanyBike.ValueMember = "id";
         }
 
         private void loadCategoryList()
@@ -74,9 +84,9 @@ namespace CapstonePRN292
                 DataGridViewRow row = this.dgvBike.Rows[e.RowIndex];
                 txtIDB.Text = row.Cells[0].Value.ToString();
                 txtNameB.Text = row.Cells[1].Value.ToString();
-                txtCategoryB.Text = row.Cells[2].Value.ToString();
+                cbCategoryBike.Text = row.Cells[2].Value.ToString();
                 txtPriceB.Text = row.Cells[3].Value.ToString();
-                txtCompanyB.Text = row.Cells[4].Value.ToString();
+                cbCompanyBike.Text = row.Cells[4].Value.ToString();
                 txtVersionB.Text = row.Cells[5].Value.ToString();
                 txtCCB.Text = row.Cells[6].Value.ToString();
 
@@ -88,16 +98,24 @@ namespace CapstonePRN292
             dtBike = B.getBike();
             txtIDB.DataBindings.Clear();
             txtNameB.DataBindings.Clear();
+            cbCategoryBike.DataBindings.Clear();
+            cbCompanyBike.DataBindings.Clear();
             dgvBike.DataSource = dtBike;
+            txtIDB.Text = "";
+            txtNameB.Text = "";
+            txtPriceB.Text = "";
+            txtCCB.Text = "";
+            txtVersionB.Text = "";
+            cbCategoryBike.SelectedIndex = 1;
+            cbCompanyBike.SelectedIndex = 1;
         }
-
 
         private void btnAddB_Click(object sender, System.EventArgs e)
         {
             string Name = txtNameB.Text;
-            int Category = int.Parse(txtCategoryB.Text);
+            int Category = cbCategoryBike.SelectedIndex + 1;
             float Price = float.Parse(txtPriceB.Text);
-            int Company = int.Parse(txtCompanyB.Text);
+            int Company = cbCompanyBike.SelectedIndex + 1;
             int Version = int.Parse(txtVersionB.Text);
             int CC = int.Parse(txtCCB.Text);
 
@@ -112,8 +130,10 @@ namespace CapstonePRN292
             };
             bool r = B.addNewBike(b);
             string s = (r == true ? "successful" : "fail");
-            MessageBox.Show("Add " + s);
+            MessageBox.Show("Add " + s, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             getAllBike();
+            loadBikeList();
         }
+ 
     }
 }

@@ -9,17 +9,19 @@ namespace CapstonePRN292.DBHelper
 {
     public class DBConnection
     {
-        string connectionString = @"Data Source=LAPTOP-4LFO15O4\TRINT;Initial Catalog=BikeSaleSystemDB;User ID=sa;password=12345";
-
+        string connectionString = @"Data Source=.\SQLEXPRESS;Initial Catalog=BikeSaleSystemDB;User ID=sa;password=sa123456";
+        // hiển thị dữ liệu
         public DataTable dataTable(string sql)
         {
             DataTable dataTable = new DataTable();
             using (SqlConnection connection = new SqlConnection(connectionString)) //using để auto giải phóng bộ nhớ khi kết thúc khối lệnh
             {
                 connection.Open();
+                // khởi tạo 1 SqlCommand để trỏ tới data trong DB
                 SqlCommand command = new SqlCommand(sql, connection);
-
+                // khởi tạo 1 Sql Adapter để lưu data trong DB
                 SqlDataAdapter adapter = new SqlDataAdapter(command);
+                // đổ data vào bảng
                 adapter.Fill(dataTable);
                 connection.Close();
             }
@@ -142,38 +144,5 @@ namespace CapstonePRN292.DBHelper
             int count = command.ExecuteNonQuery();
             return (count > 0);
         }
-
- 
-
-
-
-        //string connectionString = @"Data Source=.\SQLEXPRESS;Initial Catalog=BikeSaleSystemDB;User ID=sa;password=sa123456";
-        //public DataTable ExecuteQuery(string query, object[] parameter = null)
-        //{
-        //    DataTable data = new DataTable();
-
-        //    using (SqlConnection connection = new SqlConnection(connectionString))
-        //    {
-        //        connection.Open();
-        //        SqlCommand command = new SqlCommand(query, connection);
-        //        if (parameter != null)
-        //        {
-        //            string[] listPara = query.Split(' ');
-        //            int i = 0;
-        //            foreach (string item in listPara)
-        //            {
-        //                if (item.Contains('@'))
-        //                {
-        //                    command.Parameters.AddWithValue(item, parameter[i]);
-        //                    i++;
-        //                }
-        //            }
-        //        }
-        //        SqlDataAdapter adapter = new SqlDataAdapter(command);
-        //        adapter.Fill(data);
-        //        connection.Close();
-        //    }
-        //    return data;
-        //}
     }
 }
