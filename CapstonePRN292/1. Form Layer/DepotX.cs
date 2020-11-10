@@ -26,10 +26,7 @@ namespace CapstonePRN292
             loadComboBox();
         }
 
-        void loadDepot()
-        {
-
-        }
+    
 
         private void DepotX_Load(object sender, EventArgs e)
         {
@@ -43,6 +40,9 @@ namespace CapstonePRN292
             {
                 AdminX fr = new AdminX();
                 fr.ShowDialog();
+                loadCustomerTable();
+                loadBikeTable();
+                loadComboBox();
             }
             else
             {

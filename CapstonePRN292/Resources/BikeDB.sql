@@ -191,7 +191,7 @@ INSERT INTO dbo.BikeCategory
 VALUES  ( N'Standard'  -- name - nvarchar(50)
           ),
 		  (N'Cruiser'),
-		  (N'Sprot Bike'),
+		  (N'Sport Bike'),
 		  (N'Touring'),
 		  (N'Scooter'),
 		  (N'Off-road');

@@ -10,7 +10,8 @@ namespace CapstonePRN292.DBHelper
 {
     public class DBConnection
     {
-        string connectionString = @"Data Source=LAPTOP-4LFO15O4\TRINT;Initial Catalog=BikeSaleSystemDB;User ID=sa;password=12345";
+        string connectionString = @"Data Source=.\SQLEXPRESS;Initial Catalog=BikeSaleSystemDB;User ID=sa;password=sa123456";
+        //string connectionString = @"Data Source=LAPTOP-4LFO15O4\TRINT;Initial Catalog=BikeSaleSystemDB;User ID=sa;password=12345";
         // hiển thị dữ liệu
         public DataTable dataTable(string sql)
         {
