@@ -113,13 +113,20 @@ namespace CapstonePRN292
             {
                 DataGridViewRow row = this.dgvBike.Rows[e.RowIndex];
                 txtBikeName.Text = row.Cells[0].Value.ToString();
+                txtPrice.Text = row.Cells[2].Value.ToString();
             }
+            int quantity = Convert.ToInt32(txtQuantity.Value);
+            int total = Convert.ToInt32(txtPrice.Text);
+            lbTotal.Text = (quantity * total).ToString("###, ###, ###") + "   VND";
         }
 
         private void btnPay_Click(object sender, EventArgs e)
         {
+            int quantity = Convert.ToInt32(txtQuantity.Value);
+            int totalPrice = Convert.ToInt32(txtPrice.Text) * quantity;
             string cusName = txtCusname.Text;
             string bikeName = txtBikeName.Text;
+            
         }
 
         private void loadComboBox()
@@ -128,7 +135,14 @@ namespace CapstonePRN292
                 "FROM PaymentMethod";
             DBConnection connection = new DBConnection();
             cbPayment.DataSource = connection.dataTable(sql_paymethod);
-            cbPayment.DisplayMember = "method";
+            cbPayment.DisplayMember = "method"; 
+        }
+
+        private void txtQuantity_Click(object sender, EventArgs e)
+        {
+            int quantity = Convert.ToInt32(txtQuantity.Value);
+            double total = Convert.ToDouble(txtPrice.Text);
+            lbTotal.Text = (quantity * total).ToString("###, ###, ###") + "   VND";
         }
     }
 }

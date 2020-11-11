@@ -339,7 +339,6 @@ namespace CapstonePRN292.DBHelper
             return (count > 0);
         }
 
-
         public bool getRole(string sql)
         {
             SqlConnection connection = new SqlConnection(connectionString);

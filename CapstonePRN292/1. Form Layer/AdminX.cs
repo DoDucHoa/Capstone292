@@ -297,6 +297,11 @@ namespace CapstonePRN292
             MessageBox.Show("Delete " + G, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             getAllCompany();
             loadComponent();
-        } 
+        }
+
+        private void AdminX_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            
+        }
     }
 }
